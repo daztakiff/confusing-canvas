@@ -1,10 +1,14 @@
 export function drawGrid(ctx, width, height) {
   console.log('drawGrid')
   let s = 28
-  let pL = s
-  let pT = s
-  let pR = s
-  let pB = s
+  let nX = Math.floor(width / s) - 2
+  let nY = Math.floor(height / s) - 2
+  let pX = width - nX * s
+  let pY = height - nY * s
+  let pL = Math.ceil(pX / 2) - 0.5
+  let pT = Math.ceil(pY / 2) - 0.5
+  let pR = width - nX * s - pL
+  let pB = height - nY * s - pT
 
   ctx.strokeStyle = 'lightgrey'
   ctx.beginPath()
